@@ -52,7 +52,7 @@ class ZabbixProblemSensorEntity(CoordinatorEntity, SensorEntity):
 
     _attr_has_entity_name = True
     _attr_icon = "mdi:alpha-z-box"
-    _attr_name = "Zabbix"
+    _attr_name = None
 
     def __init__(self, coordinator, name, tags):
         super().__init__(coordinator)
