@@ -1,0 +1,14 @@
+{
+  "domain": "zabbix_problems",
+  "name": "zabbix_problems",
+  "codeowners": ["@rexdek"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/zabbix_problems",
+  "homekit": {},
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": ["py-zabbix==1.1.7"],
+  "ssdp": [],
+  "zeroconf": []
+}
