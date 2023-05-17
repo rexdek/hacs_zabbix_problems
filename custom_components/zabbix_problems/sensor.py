@@ -9,7 +9,7 @@ from typing import Dict, List
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EVENT, CONF_NAME, DEVICE_NAME
+from homeassistant.const import CONF_EVENT, CONF_NAME
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import (
@@ -18,7 +18,7 @@ from homeassistant.helpers.update_coordinator import (
 )
 
 from homeassistant.helpers.entity import DeviceInfo
-from .const import DOMAIN
+from .const import DEVICE_NAME, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
