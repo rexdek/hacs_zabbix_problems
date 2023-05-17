@@ -9,7 +9,7 @@ from typing import Dict, List
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_EVENT, CONF_NAME
+from homeassistant.const import CONF_EVENT, CONF_NAME, DEVICE_NAME
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import (
@@ -35,7 +35,7 @@ async def async_setup_entry(
         hass,
         _LOGGER,
         zapi_events,
-        name="Zabbix Data Coordinator",
+        name=DEVICE_NAME,
         update_interval=datetime.timedelta(seconds=3),
     )
     await coordinator.async_config_entry_first_refresh()
@@ -102,6 +102,7 @@ class ZabbixUpdateCoordinator(DataUpdateCoordinator):
 
 
 class ZabbixEvent:
+    """Class to hold zabbix event"""
     def __init__(self, eid: int, host: str, name: str, severity: str, tags: list):
         self.eid = eid
         self.host = host
@@ -117,6 +118,7 @@ class ZabbixEvent:
 
 
 class ZabbixEvents:
+    """Class to retrieve zabbix events sorted by tag"""
     def __init__(self, zapi):
         self.zapi: Callable = zapi
         self._events: List
